@@ -166,5 +166,3 @@ function genRegister() {
     address_complement: complemento[comp] + num[comp],
   };
 }
-
-console.log(genRegister());
