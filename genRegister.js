@@ -141,6 +141,15 @@ function genCEP(cidade) {
   return dict[cidade] + "-" + end.toString();
 }
 
+function genAddress() {
+  let ind = ["av. ", "r. ", "alm. "];
+  let nom = ["Baobá", "Frederico", "Justino", "dos Palmares", "das Flores"];
+
+  return (
+    ind[Math.floor(Math.random() * 3)] + nom[Math.floor(Math.random() * 5)]
+  );
+}
+
 function genRegister() {
   let complemento = ["nenhum", "apartamento "];
   let comp = Math.floor(Math.random() * 2);
@@ -149,7 +158,7 @@ function genRegister() {
 
   return {
     name: genName(),
-    address: "teste",
+    address: genAddress(),
     address_number: Math.floor(Math.random() * 1000 + 1),
     state: genEF(index),
     city: genCidade(index),
@@ -157,3 +166,5 @@ function genRegister() {
     address_complement: complemento[comp] + num[comp],
   };
 }
+
+console.log(genRegister());
